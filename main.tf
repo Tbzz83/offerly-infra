@@ -17,7 +17,10 @@ resource "keycloak_openid_client" "openid_client" {
     standard_flow_enabled = true
     implicit_flow_enabled = false
     valid_redirect_uris = [
-        "http://localhost:3000/api/openid-callback"
+        "http://localhost:3000/api/openid-callback",
+        "http://localhost:3000/api/auth/openid-callback",
+        "http://localhost:3000/api/auth/callback",
+
     ]
 
     login_theme = "keycloak"
