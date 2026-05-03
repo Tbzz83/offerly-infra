@@ -9,7 +9,7 @@ terraform {
 
 provider "keycloak" {
   # Configuration options
-  client_id = var.local_keycloak_client_id
+  client_id     = var.local_keycloak_client_id
   client_secret = var.local_keycloak_client_secret
-  url = "http://keycloak.localtest.me:8081"
+  url           = "http://keycloak.localtest.me:8081"
 }
