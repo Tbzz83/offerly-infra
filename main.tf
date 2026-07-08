@@ -7,6 +7,16 @@ data "keycloak_realm" "realm" {
   realm = "homelab"
 }
 
+import {
+  id = "homelab"
+  to = keycloak_realm.homelab
+}
+
+resource "keycloak_realm" "homelab" {
+  realm = "homelab"
+  ssl_required = "none"
+}
+
 resource "keycloak_openid_client" "openid_client" {
   realm_id  = data.keycloak_realm.realm.id
   client_id = local.client_name
